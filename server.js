@@ -11,7 +11,7 @@ app.post("/api/chat", async (req, res) => {
   try {
     const response = await axios.post("https://api.openai.com/v1/chat/completions", req.body, {
       headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        Authorization: `Bearer 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`
       }
     });
     res.json(response.data);
