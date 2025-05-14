@@ -11,7 +11,8 @@ app.post("/api/chat", async (req, res) => {
   try {
     const response = await axios.post("https://api.openai.com/v1/chat/completions", req.body, {
       headers: {
-        Authorization: `Bearer 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`
+                Authorization: `Bearer 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`,
+       "Content-Type": "application/json",
       }
     });
     res.json(response.data);
@@ -20,4 +21,4 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Proxy listening on port 3000"));
+app.listen(80, () => console.log("Proxy listening on port 80"));
