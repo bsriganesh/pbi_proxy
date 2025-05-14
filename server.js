@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/api/chat", async (req, res) => {
+  console.log("Entered")
   try {
     const response = await axios.post("https://api.openai.com/v1/chat/completions", req.body, {
       headers: {
