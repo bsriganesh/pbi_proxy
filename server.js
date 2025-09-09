@@ -4,7 +4,13 @@ const cors = require("cors");
 const axios = require("axios");
 
 const app = express();
-app.use(cors());
+
+//Apply CORS with wildcard
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"]
+  }));
+
 app.use(express.json());
 
 app.post("/api/chat", async (req, res) => {
